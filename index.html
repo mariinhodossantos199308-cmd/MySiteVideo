@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo em Tela Cheia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="video-container" id="videoContainer">
+        <video id="meuVideo" playsinline autoplay muted loop></video>
+        
+        <!-- Animaçãozinha customizada de Play/Pause (Sem emojis) -->
+        <div class="anim-indicator" id="animIndicator">
+            <div class="icon-shape" id="iconShape"></div>
+        </div>
+    </div>
+
+    <!-- Botão de controle que reaparece se sair da tela cheia -->
+    <button id="playBtn" style="display: none;">Toque para Iniciar / Tela Cheia</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

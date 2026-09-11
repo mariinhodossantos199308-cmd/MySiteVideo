@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    position: relative;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+/* Botão principal de início garantido no centro da tela */
+#playBtn {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 16px 28px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: #ff0055;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    z-index: 99999;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.9);
+}
+
+/* Indicador animado central */
+.anim-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    width: 90px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    z-index: 10000;
+}
+
+.anim-indicator.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* --- ÍCONE DE PLAY (Triângulo) --- */
+.icon-shape.play {
+    width: 0;
+    height: 0;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 30px solid #fff;
+    border-right: 0px solid transparent;
+    margin-left: 6px; /* Centraliza visualmente o triângulo */
+}
+
+/* --- ÍCONE DE PAUSE (Duas Barras Verticais Distintas) --- */
+.icon-shape.pause {
+    width: 26px;
+    height: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-shape.pause::before,
+.icon-shape.pause::after {
+    content: '';
+    width: 8px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 2px;
+}
